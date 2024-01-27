@@ -12,9 +12,12 @@ config_version=5
 
 config/name="HerdingCats"
 run/main_scene="res://scenes/main_menu.tscn"
-
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
 
 [input]
 
@@ -46,10 +49,6 @@ ui_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
-
-[autoload]
-
-GameManager="*res://scripts/game_manager.gd"
 
 [rendering]
 
