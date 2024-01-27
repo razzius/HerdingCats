@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://e3yy8dcs3wem"
+path.s3tc="res://.godot/imported/girafe_girafe-5d01a1f5ea2089d3c1814aad6092d40f_girafetexture.png-3db2dbed7c8cc84890741e9aca811fe8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://assets/girafe_girafe-5d01a1f5ea2089d3c1814aad6092d40f_girafetexture.png"
+dest_files=["res://.godot/imported/girafe_girafe-5d01a1f5ea2089d3c1814aad6092d40f_girafetexture.png-3db2dbed7c8cc84890741e9aca811fe8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
