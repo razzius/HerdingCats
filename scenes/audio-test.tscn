@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://e50gb0mc1oho"]
+
+[ext_resource type="AudioStream" uid="uid://b7iudevm1pi0d" path="res://audio/music/road-to-paris-gypsy-jazz-144631.mp3" id="1_mt888"]
+
+[node name="Audio-test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_mt888")
