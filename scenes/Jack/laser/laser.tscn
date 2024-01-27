@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo54k33bxv64d"]
+
+[ext_resource type="Script" path="res://scenes/Jack/laser/laser.gd" id="1_mk1th"]
+
+[node name="Laser" type="Node3D"]
+script = ExtResource("1_mk1th")
