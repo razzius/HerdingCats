@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://chscphnj7fanb"]
+
+[ext_resource type="PackedScene" uid="uid://bx1lbpph0sg37" path="res://scenes/Jack/block.tscn" id="1_xkxul"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_72scy"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hpg2"]
+size = Vector3(10, 0.5, 10)
+
+[node name="JackScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.981212, 0.192933, 0, -0.192933, 0.981212, 0, 1.32763, 3.58624)
+fov = 113.891
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277382, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_72scy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_1hpg2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.750273, 0.661129, 0, -0.661129, 0.750273, 0, 4.65276, 5.49304)
+
+[node name="Block" parent="." instance=ExtResource("1_xkxul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06047, 0)
