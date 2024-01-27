@@ -4,7 +4,7 @@
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_13a2e")
-gameScenePath = "res://scenes/cole_scene.tscn"
+gameScenePath = "res://scenes/game_scene.tscn"
 
 [node name="StartButton" type="Button" parent="."]
 offset_right = 8.0
