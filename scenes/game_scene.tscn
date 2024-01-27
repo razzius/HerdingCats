@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfxoa3yxx11gv"]
+[gd_scene load_steps=6 format=3 uid="uid://diy1md1qektri"]
 
 [ext_resource type="PackedScene" uid="uid://bx1lbpph0sg37" path="res://scenes/Jack/block.tscn" id="1_ix4u3"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
