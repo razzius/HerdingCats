@@ -5,8 +5,11 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1g5t8"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Cat" type="Node3D"]
 script = ExtResource("1_so6d1")
+personality = null
+current_state = null
+food_preference = null
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
