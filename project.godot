@@ -11,11 +11,8 @@ config_version=5
 [application]
 
 config/name="HerdingCats"
-<<<<<<< HEAD
-run/main_scene="res://scenes/Jack/jack_scene.tscn"
-=======
 run/main_scene="res://scenes/main_menu.tscn"
->>>>>>> 1af6073487763233843518457b39c5f002e98582
+
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
