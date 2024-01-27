@@ -32,7 +32,10 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Cube": {
-"generate/physics": true
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/physics_material_override": null,
+"physics/shape_type": 1
 }
 }
 }
