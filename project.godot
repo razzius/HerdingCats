@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="HerdingCats"
-<<<<<<< HEAD
 run/main_scene="res://scenes/Jack/jack_scene.tscn"
-=======
-run/main_scene="res://scenes/main_menu.tscn"
->>>>>>> 1af6073487763233843518457b39c5f002e98582
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="res://scenes/Jack/jack_scene.tscn"
 
 [input]
 
@@ -49,10 +46,6 @@ ui_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
-
-[autoload]
-
-GameManager="*res://scripts/game_manager.gd"
 
 [rendering]
 

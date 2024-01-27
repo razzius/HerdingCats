@@ -22,7 +22,7 @@ mesh = SubResource("BoxMesh_72scy")
 shape = SubResource("BoxShape3D_1hpg2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.750273, 0.661129, 0, -0.661129, 0.750273, 0, 4.65276, 5.49304)
+transform = Transform3D(1, 0, 0, 0, 0.750273, 0.661129, 0, -0.661129, 0.750273, 0, 9.78402, 9.81184)
 
 [node name="Block" parent="." instance=ExtResource("1_xkxul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06047, -2.55622)
