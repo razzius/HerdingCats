@@ -39,5 +39,6 @@ func _process(delta):
 
 func play():
 	var directionToTarget = target.global_position - global_position
+	print("directionToTarget: " + str(directionToTarget))
 	apply_impulse(directionToTarget)
 	current_state = CurrentState.STAY

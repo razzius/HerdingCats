@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://diy1md1qektri"]
+[gd_scene load_steps=5 format=3 uid="uid://dfxoa3yxx11gv"]
 
-[ext_resource type="PackedScene" uid="uid://bx1lbpph0sg37" path="res://scenes/Jack/block.tscn" id="1_ix4u3"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
 [ext_resource type="PackedScene" uid="uid://b5403u4jjoyqd" path="res://scenes/cat.tscn" id="3_e0cnn"]
 
@@ -25,11 +24,12 @@ shape = SubResource("BoxShape3D_1hpg2")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.750273, 0.661129, 0, -0.661129, 0.750273, 0, 4.65276, 5.49304)
 
-[node name="Block" parent="." instance=ExtResource("1_ix4u3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06047, -2.55622)
-
 [node name="Character" parent="." instance=ExtResource("2_tlur0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
 
 [node name="Cat" parent="." instance=ExtResource("3_e0cnn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.75332)
+current_state = 7
+
+[node name="Block" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
