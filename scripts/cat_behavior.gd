@@ -76,7 +76,7 @@ func stay():
 
 	if stopped:
 		current_state = CurrentState.GETTING_UP
-		global_rotation = Vector3(0, 0, 0)  # FIXME make it face the same direction in the plane
+		global_rotation = Vector3(0, global_rotation.y, 0)
 
 func get_up():
 	var stopped = get_linear_velocity().length() < GET_UP_THRESHOLD
