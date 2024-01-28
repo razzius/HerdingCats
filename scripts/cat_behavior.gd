@@ -67,6 +67,7 @@ func play():
 	var speed = rng.randf_range(5.0, 10.0)
 	var direction = directionToTarget.normalized() + Vector3.UP / 2
 	apply_impulse(direction * speed)
+	AudioController._meow()
 
 func stay():
 	"""Makes the cat stand up."""
