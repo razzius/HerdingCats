@@ -1,20 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5403u4jjoyqd"]
+[gd_scene load_steps=3 format=3 uid="uid://b5403u4jjoyqd"]
 
-[ext_resource type="Script" path="res://scripts/cat_behavior.gd" id="1_so6d1"]
 [ext_resource type="PackedScene" uid="uid://6b4126qyae54" path="res://assets/cat.glb" id="2_d3k6n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1g5t8"]
 
-[node name="Node3D" type="Node3D"]
-script = ExtResource("1_so6d1")
+[node name="Cat" type="RigidBody3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.175, 0.16838, 0)
 shape = SubResource("BoxShape3D_1g5t8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0.032154, 0.16838, 0)
 shape = SubResource("BoxShape3D_1g5t8")
 

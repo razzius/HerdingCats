@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfxoa3yxx11gv"]
+[gd_scene load_steps=6 format=3 uid="uid://diy1md1qektri"]
 
 [ext_resource type="PackedScene" uid="uid://bx1lbpph0sg37" path="res://scenes/Jack/block.tscn" id="1_ix4u3"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
-[ext_resource type="PackedScene" uid="uid://6b4126qyae54" path="res://assets/cat.glb" id="3_scmy0"]
+[ext_resource type="PackedScene" uid="uid://b5403u4jjoyqd" path="res://scenes/cat.tscn" id="3_e0cnn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
 size = Vector3(10, 0.5, 10)
@@ -31,5 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06047, -2.55622)
 [node name="Character" parent="." instance=ExtResource("2_tlur0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
 
-[node name="cat" parent="." instance=ExtResource("3_scmy0")]
-transform = Transform3D(0.102539, 0, 0.126751, 0, 0.163034, 0, -0.126751, 0, 0.102539, 0.983424, -0.027382, -0.159595)
+[node name="Cat" parent="." instance=ExtResource("3_e0cnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.75332)

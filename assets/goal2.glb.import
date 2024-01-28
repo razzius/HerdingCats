@@ -3,19 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6b4126qyae54"
-path="res://.godot/imported/cat.glb-2054bd90902e58b552cec6ab54a25738.scn"
+uid="uid://3h7o8j2nattc"
+path="res://.godot/imported/goal2.glb-6010d13ba9ea09d40685a9682cbdee37.scn"
 
 [deps]
 
-source_file="res://assets/cat.glb"
-dest_files=["res://.godot/imported/cat.glb-2054bd90902e58b552cec6ab54a25738.scn"]
+source_file="res://assets/goal2.glb"
+dest_files=["res://.godot/imported/goal2.glb-6010d13ba9ea09d40685a9682cbdee37.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/apply_root_scale=false
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -29,14 +29,6 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Cube": {
-"physics/body_type": 1,
-"physics/physics_material_override": null,
-"physics/shape_type": 1
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
