@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://ba4wvmj0kqpmk" path="res://assets/GOAL6.glb" id="3_te0xg"]
 [ext_resource type="Shader" path="res://Shaders/SkyShader.gdshader" id="5_jsnmq"]
-[ext_resource type="PackedScene" path="res://scenes/ui-overlay.tscn" id="6_ch8gb"]
+[ext_resource type="PackedScene" uid="uid://chppa135y0sgm" path="res://scenes/ui-overlay.tscn" id="6_ch8gb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6d6w"]
 albedo_color = Color(0.196078, 0.47451, 0.184314, 1)

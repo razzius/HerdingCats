@@ -1,14 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2sa8w78cyp08"]
+[gd_scene load_steps=7 format=3 uid="uid://c2sa8w78cyp08"]
 
 [ext_resource type="Script" path="res://scripts/main_menu_controller.gd" id="1_13a2e"]
+[ext_resource type="Texture2D" uid="uid://4lf7u1qumg2k" path="res://assets/mike_cats.jpg" id="2_wrptu"]
+[ext_resource type="Texture2D" uid="uid://dh1tono3y54u" path="res://assets/orange_boys.jpg" id="3_8nq23"]
+[ext_resource type="Texture2D" uid="uid://cl87dkv0y1si1" path="res://assets/nyx.jpg" id="4_tnwlq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0l61"]
+font_size = 91
+
+[sub_resource type="LabelSettings" id="LabelSettings_t101e"]
+font_size = 37
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_13a2e")
 gameScenePath = "res://scenes/game_scene.tscn"
 
 [node name="StartButton" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Start Game"
+offset_left = 34.0
+offset_top = 259.0
+offset_right = 232.0
+offset_bottom = 474.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 613.0
+offset_bottom = 133.0
+text = "Herding Cats"
+label_settings = SubResource("LabelSettings_r0l61")
+
+[node name="MikeCats" type="Sprite2D" parent="."]
+position = Vector2(499, 370)
+scale = Vector2(0.115079, 0.115079)
+texture = ExtResource("2_wrptu")
+
+[node name="OrangeBoys" type="Sprite2D" parent="."]
+position = Vector2(927, 198)
+scale = Vector2(0.0852865, 0.0852865)
+texture = ExtResource("3_8nq23")
+
+[node name="Nyx" type="Sprite2D" parent="."]
+position = Vector2(931, 488)
+scale = Vector2(0.0848388, 0.0848389)
+texture = ExtResource("4_tnwlq")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 306.0
+offset_right = 643.0
+offset_bottom = 431.0
+text = " Start
+Game"
+label_settings = SubResource("LabelSettings_t101e")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
