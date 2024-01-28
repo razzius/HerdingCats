@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://e50gb0mc1oho"]
 
-[ext_resource type="AudioStream" uid="uid://b7iudevm1pi0d" path="res://audio/music/road-to-paris-gypsy-jazz-144631.mp3" id="1_mt888"]
-[ext_resource type="Script" path="res://scenes/audio-test.gd" id="1_t0fra"]
-[ext_resource type="AudioStream" uid="uid://dwck6pqa7lb7r" path="res://audio/sfx/meow3.mp3" id="2_2tl5w"]
+[ext_resource type="Script" path="res://scripts/audio_controller.gd" id="1_xpx7t"]
+[ext_resource type="AudioStream" uid="uid://dwck6pqa7lb7r" path="res://audio/sfx/meow3.mp3" id="2_bew0c"]
+[ext_resource type="AudioStream" uid="uid://b7iudevm1pi0d" path="res://audio/music/road-to-paris-gypsy-jazz-144631.mp3" id="3_jojfr"]
 
 [node name="Audio-test" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ offset_right = 291.0
 offset_bottom = -228.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t0fra")
+script = ExtResource("1_xpx7t")
 
 [node name="MeowButton" type="Button" parent="."]
 layout_mode = 0
@@ -26,10 +26,10 @@ offset_bottom = 534.0
 text = "MEOW"
 
 [node name="meow" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_2tl5w")
+stream = ExtResource("2_bew0c")
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_mt888")
+stream = ExtResource("3_jojfr")
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
