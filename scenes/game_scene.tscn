@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfxoa3yxx11gv"]
+[gd_scene load_steps=14 format=3 uid="uid://dfxoa3yxx11gv"]
 
 [ext_resource type="Script" path="res://scripts/game_scene_controller.gd" id="1_bbcit"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
 [ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://ba4wvmj0kqpmk" path="res://assets/GOAL6.glb" id="3_te0xg"]
 [ext_resource type="Shader" path="res://Shaders/SkyShader.gdshader" id="5_jsnmq"]
+[ext_resource type="PackedScene" path="res://scenes/ui-overlay.tscn" id="6_ch8gb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6d6w"]
 albedo_color = Color(0.196078, 0.47451, 0.184314, 1)
@@ -96,6 +97,8 @@ shape = SubResource("BoxShape3D_3ohlx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6h4cd")
+
+[node name="Ui-overlay" parent="." instance=ExtResource("6_ch8gb")]
 
 [connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
 [connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]

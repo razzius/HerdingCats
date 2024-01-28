@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5403u4jjoyqd"]
 
-[ext_resource type="Script" path="res://scripts/cat_behavior.gd" id="1_so6d1"]
-[ext_resource type="PackedScene" uid="uid://6b4126qyae54" path="res://assets/cat.glb" id="2_d3k6n"]
-[ext_resource type="Script" path="res://scripts/audio_controller.gd" id="3_v0jry"]
+[ext_resource type="Script" path="res://scripts/cat_behavior.gd" id="1_q4f25"]
+[ext_resource type="PackedScene" uid="uid://6b4126qyae54" path="res://assets/cat.glb" id="2_f1ewx"]
+[ext_resource type="Script" path="res://scripts/audio_controller.gd" id="3_pxaka"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1g5t8"]
 
 [node name="Cat" type="RigidBody3D"]
-script = ExtResource("1_so6d1")
+script = ExtResource("1_q4f25")
 
 [node name="CollisionShape3D1" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.175, 0.16838, 0)
@@ -17,8 +17,8 @@ shape = SubResource("BoxShape3D_1g5t8")
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0.032154, 0.16838, 0)
 shape = SubResource("BoxShape3D_1g5t8")
 
-[node name="cat" parent="." instance=ExtResource("2_d3k6n")]
+[node name="cat" parent="." instance=ExtResource("2_f1ewx")]
 transform = Transform3D(0.085, 0, 0, 0, 0.085, 0, 0, 0, 0.085, -0.245, -0.04, 0)
 
 [node name="AudioController" type="Node" parent="."]
-script = ExtResource("3_v0jry")
+script = ExtResource("3_pxaka")
