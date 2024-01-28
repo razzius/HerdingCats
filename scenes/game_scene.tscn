@@ -4,14 +4,57 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
 [ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://ba4wvmj0kqpmk" path="res://assets/GOAL6.glb" id="3_te0xg"]
+[ext_resource type="Shader" path="res://scenes/SkyShader.gdshader" id="5_jsnmq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6d6w"]
+albedo_color = Color(0.196078, 0.47451, 0.184314, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
+material = SubResource("StandardMaterial3D_m6d6w")
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1hpg2"]
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohlx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb2og"]
+shader = ExtResource("5_jsnmq")
+shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
+shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 2.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_speed = 1.0
+shader_parameter/overwritten_time = 0.0
+
+[sub_resource type="Sky" id="Sky_sfesq"]
+sky_material = SubResource("ShaderMaterial_rb2og")
+
+[sub_resource type="Environment" id="Environment_6h4cd"]
+background_mode = 2
+sky = SubResource("Sky_sfesq")
+ambient_light_color = Color(0.356863, 0.521569, 0.952941, 1)
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_bbcit")
@@ -30,7 +73,7 @@ shape = SubResource("BoxShape3D_1hpg2")
 transform = Transform3D(0.321927, 0.455605, -0.829932, 0.0257931, 0.872052, 0.488732, 0.946413, -0.178743, 0.268986, -20.0859, 12.1836, 1)
 
 [node name="Character" parent="." instance=ExtResource("2_tlur0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.38049, 8.26318)
 
 [node name="Block" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
@@ -38,7 +81,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
 [node name="Laser" parent="." instance=ExtResource("3_3n18x")]
 
 [node name="GOAL6" parent="." instance=ExtResource("3_te0xg")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 11.8561, -4.4394, 0.862439)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9.64566, -2.64247, 4.73898)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0659, 1.15803, -0.212873)
@@ -52,3 +95,7 @@ shape = SubResource("BoxShape3D_3ohlx")
 
 [connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
 [connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6h4cd")
+

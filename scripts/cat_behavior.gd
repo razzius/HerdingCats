@@ -36,6 +36,8 @@ var rng = RandomNumberGenerator.new()
 @onready var laser = get_parent().get_node("Laser")
 @onready var character = get_parent().get_node("Character")
 
+const GET_UP_THRESHOLD = .1
+
 func _ready():
 	target = character
 	
@@ -55,23 +57,28 @@ func _process(delta):
 		get_up()
 
 func play():
-	var directionToTarget = target.global_position - global_position
-	#print("directionToTarget: " + str(directionToTarget))
-	var speed = rng.randf_range(-5, 10.0)
-	var direction = directionToTarget.normalized() + Vector3.UP
-	apply_impulse(direction * speed)
 	current_state = CurrentState.STAY
+
+	if not laser.visible:
+		return
+
+	var directionToTarget = target.global_position - global_position
+
+	print("directionToTarget: " + str(directionToTarget))
+	var speed = rng.randf_range(5.0, 10.0)
+	var direction = directionToTarget.normalized() + Vector3.UP / 2
+	apply_impulse(direction * speed)
 
 func stay():
 	"""Makes the cat stand up."""
-	var stopped = get_linear_velocity().length() < .01
+	var stopped = get_linear_velocity().length() < GET_UP_THRESHOLD
 
 	if stopped:
 		current_state = CurrentState.GETTING_UP
 		global_rotation = Vector3(0, 0, 0)
 
 func get_up():
-	var stopped = get_linear_velocity().length() < .01
+	var stopped = get_linear_velocity().length() < GET_UP_THRESHOLD
 
 	if stopped:
 		current_state = CurrentState.PLAY
