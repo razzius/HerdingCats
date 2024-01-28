@@ -5,8 +5,8 @@ albedo_color = Color(1, 0.00784314, 0.00392157, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_l6tl3"]
 material = SubResource("StandardMaterial3D_rspj7")
-radius = 0.01
-height = 0.02
+radius = 0.02
+height = 0.04
 
 [node name="Laser" type="Node3D"]
 

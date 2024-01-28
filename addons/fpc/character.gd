@@ -276,7 +276,6 @@ func _unhandled_input(event):
 		HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity
 
 func _input(event):
-	print("INPUT HERE")
 	if Input.is_mouse_button_pressed( 1 ):
 		castLaser()
 	else:

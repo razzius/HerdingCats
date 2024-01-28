@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfxoa3yxx11gv"]
+[gd_scene load_steps=6 format=3 uid="uid://dfxoa3yxx11gv"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
+[ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://b5403u4jjoyqd" path="res://scenes/cat.tscn" id="3_e0cnn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
@@ -19,7 +20,6 @@ metadata/_edit_group_ = true
 mesh = SubResource("BoxMesh_72scy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_1hpg2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -34,3 +34,5 @@ current_state = 7
 
 [node name="Block" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
+
+[node name="Laser" parent="." instance=ExtResource("3_3n18x")]
