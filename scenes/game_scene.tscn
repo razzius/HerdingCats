@@ -9,10 +9,10 @@ size = Vector3(10, 0.5, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1hpg2"]
 size = Vector3(10, 0.5, 10)
 
-[node name="JackScene" type="Node3D"]
+[node name="GameScene" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277382, 0)
+transform = Transform3D(5.41933, 0, 0, 0, 5.41933, 0, 0, 0, 5.41933, 0, -2.62198, 0)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
