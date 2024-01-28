@@ -296,3 +296,5 @@ func castLaser():
 		print("Hit at point", result.position)
 		#$Laser.position = result.position
 		laserPosition = result.position
+		var laser = get_parent().get_node("Laser")
+		laser.global_position = laserPosition

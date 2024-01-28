@@ -66,6 +66,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
 script = SubResource("GDScript_f5t5s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Laser"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67581, 0, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00505686, 0, 0)
 mesh = SubResource("SphereMesh_57j7g")
