@@ -21,6 +21,7 @@ enum CurrentState {
 	NAUSEOUS,
 	CATNIPPED,
 	PLAY,
+	LANDING,
 	GETTING_UP
 }
 
@@ -39,25 +40,25 @@ var rng = RandomNumberGenerator.new()
 const GET_UP_THRESHOLD = .1
 
 func _ready():
-	target = character
+	target = laser
 	
 func _process(delta):
-	if laser.visible:
-		target = laser
-	else:
-		target = character
-
-	var velo = get_linear_velocity().length()
-	#print("{} w velocity {}".format([CurrentState.keys()[current_state], velo], "{}"))
-	if current_state == CurrentState.PLAY:
-		play()
-	elif current_state == CurrentState.STAY:
+	if current_state == CurrentState.STAY:
 		stay()
+	elif current_state == CurrentState.PLAY:
+		play()
+	elif current_state == CurrentState.LANDING:
+		landing()
 	elif current_state == CurrentState.GETTING_UP:
 		get_up()
 
+func stay():
+	var distanceToLaser = (target.global_position - global_position).length()
+	if laser.visible and distanceToLaser < 3:
+		current_state = CurrentState.PLAY
+
 func play():
-	current_state = CurrentState.STAY
+	current_state = CurrentState.LANDING
 
 	if not laser.visible:
 		return
@@ -70,7 +71,7 @@ func play():
 	apply_impulse(direction * speed)
 	AudioController._meow()
 
-func stay():
+func landing():
 	"""Makes the cat stand up."""
 	var stopped = get_linear_velocity().length() < GET_UP_THRESHOLD
 
@@ -80,6 +81,5 @@ func stay():
 
 func get_up():
 	var stopped = get_linear_velocity().length() < GET_UP_THRESHOLD
-
 	if stopped:
-		current_state = CurrentState.PLAY
+		current_state = CurrentState.STAY
