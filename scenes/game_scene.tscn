@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfxoa3yxx11gv"]
+[gd_scene load_steps=14 format=3 uid="uid://dfxoa3yxx11gv"]
 
 [ext_resource type="Script" path="res://scripts/game_scene_controller.gd" id="1_bbcit"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
 [ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://ba4wvmj0kqpmk" path="res://assets/GOAL6.glb" id="3_te0xg"]
 [ext_resource type="Shader" path="res://scenes/SkyShader.gdshader" id="5_jsnmq"]
+[ext_resource type="PackedScene" uid="uid://cobh3v8c8u118" path="res://scenes/ui-overlay.tscn" id="6_4xv5n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6d6w"]
 albedo_color = Color(0.196078, 0.47451, 0.184314, 1)
@@ -17,6 +18,7 @@ size = Vector3(10, 0.5, 10)
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ohlx"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rb2og"]
 shader = ExtResource("5_jsnmq")
 shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
@@ -81,7 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
 [node name="Laser" parent="." instance=ExtResource("3_3n18x")]
 
 [node name="GOAL6" parent="." instance=ExtResource("3_te0xg")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9.64566, -2.64247, 4.73898)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9.60822, -2.70316, 1.49816)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0659, 1.15803, -0.212873)
@@ -93,9 +95,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23799, -1.12565, -0.262454
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.9959, -6.67485, -3.47909)
 shape = SubResource("BoxShape3D_3ohlx")
 
-[connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
-[connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6h4cd")
 
+[node name="Ui-overlay" parent="." instance=ExtResource("6_4xv5n")]
+
+[connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
+[connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]

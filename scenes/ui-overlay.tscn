@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cobh3v8c8u118"]
+[gd_scene load_steps=5 format=3 uid="uid://cobh3v8c8u118"]
 
 [sub_resource type="FontVariation" id="FontVariation_utjnq"]
 spacing_glyph = 2
@@ -18,11 +18,6 @@ font_size = 24
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_jgiaf"]
-font_color = Color(0.941176, 0.164706, 0.2, 1)
-outline_size = 2
-outline_color = Color(0.352941, 0.352941, 0.352941, 1)
-
 [node name="Ui-overlay" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -34,6 +29,7 @@ offset_right = -9.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -48,12 +44,12 @@ alignment = 2
 
 [node name="CatsHerdedLabel" type="Label" parent="BoxContainer/HerdContainer"]
 layout_mode = 2
-text = "Herd Size:  "
+text = "Cats Herded:  "
 label_settings = SubResource("LabelSettings_q4axv")
 
 [node name="CatsHerdedCount" type="Label" parent="BoxContainer/HerdContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-text = "2/7"
 label_settings = SubResource("LabelSettings_idbve")
 horizontal_alignment = 2
 
@@ -61,22 +57,6 @@ horizontal_alignment = 2
 layout_mode = 2
 alignment = 2
 
-[node name="DamageLabel" type="Label" parent="BoxContainer/DamageContainer"]
-layout_mode = 2
-text = "Damage:"
-label_settings = SubResource("LabelSettings_q4axv")
-
-[node name="DamageCount" type="Label" parent="BoxContainer/DamageContainer"]
-layout_mode = 2
-text = "$580"
-label_settings = SubResource("LabelSettings_idbve")
-horizontal_alignment = 2
-
 [node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 alignment = 2
-
-[node name="DamageLabel" type="Label" parent="BoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Carpet Cleaning -$50"
-label_settings = SubResource("LabelSettings_jgiaf")
