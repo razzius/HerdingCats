@@ -1,6 +1,6 @@
 extends Node3D
 
-var catScene = preload("res://scenes/cat.tscn")
+var catScene = preload("res://scenes/Cat/cat.tscn")
 var herdCount = 0
 var catCount = 20
 
