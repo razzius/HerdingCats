@@ -33,11 +33,18 @@ enum FoodPreference {
 
 var rng = RandomNumberGenerator.new()
 
+@onready var laser = get_parent().get_node("Laser")
+@onready var character = get_parent().get_node("Character")
+
 func _ready():
-	# target = get_parent().get_node("Block")
-	target = get_parent().get_node("Character")
+	target = character
 	
 func _process(delta):
+	if laser.visible:
+		target = laser
+	else:
+		target = character
+
 	var velo = get_linear_velocity().length()
 	print("{} w velocity {}".format([CurrentState.keys()[current_state], velo], "{}"))
 	if current_state == CurrentState.PLAY:

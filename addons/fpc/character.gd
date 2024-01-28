@@ -276,8 +276,11 @@ func _unhandled_input(event):
 		HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity
 
 func _input(event):
-	if event.is_action_pressed("ui_click"):
+	if Input.is_mouse_button_pressed( 1 ):
 		castLaser()
+	else:
+		var laser = get_parent().get_node("Laser")
+		laser.visible = false
 
 
 func castLaser():
@@ -297,4 +300,5 @@ func castLaser():
 		#$Laser.position = result.position
 		laserPosition = result.position
 		var laser = get_parent().get_node("Laser")
+		laser.visible = true
 		laser.global_position = laserPosition
