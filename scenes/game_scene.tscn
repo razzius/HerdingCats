@@ -32,4 +32,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06047, -2.55622)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
 
 [node name="Cat" parent="." instance=ExtResource("3_e0cnn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.95351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.75332)
