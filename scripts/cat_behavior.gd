@@ -20,7 +20,8 @@ enum CurrentState {
 	ZOOMIES,
 	NAUSEOUS,
 	CATNIPPED,
-	PLAY
+	PLAY,
+	GETTING_UP
 }
 
 enum FoodPreference {
@@ -34,22 +35,31 @@ func _ready():
 	target = get_parent().get_node("Block")
 
 func _process(delta):
-	var stopped = get_linear_velocity().length() < .0001
-	if stopped:
-		print('stopped')
-		global_rotation = Vector3(0, 0, 0)
-
+	var velo = get_linear_velocity().length()
+	print("{} w velocity {}".format([CurrentState.keys()[current_state], velo], "{}"))
 	if current_state == CurrentState.PLAY:
 		play()
 	elif current_state == CurrentState.STAY:
 		stay()
+	elif current_state == CurrentState.GETTING_UP:
+		get_up()
 
 func play():
 	var directionToTarget = target.global_position - global_position
 	print("directionToTarget: " + str(directionToTarget))
-	apply_impulse(directionToTarget * 3)
+	apply_impulse(directionToTarget.normalized() * 5)
 	current_state = CurrentState.STAY
 
 func stay():
 	"""Makes the cat stand up."""
-	print("standing up")
+	var stopped = get_linear_velocity().length() < .001
+
+	if stopped:
+		current_state = CurrentState.GETTING_UP
+
+func get_up():
+	global_rotation = Vector3(0, 0, 0)
+	var stopped = get_linear_velocity().length() < .001
+
+	if stopped:
+		current_state = CurrentState.PLAY
