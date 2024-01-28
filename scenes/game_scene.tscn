@@ -68,7 +68,7 @@ shape = SubResource("BoxShape3D_1hpg2")
 transform = Transform3D(0.321927, 0.455605, -0.829932, 0.0257931, 0.872052, 0.488732, 0.946413, -0.178743, 0.268986, -20.0859, 12.1836, 1)
 
 [node name="Character" parent="." instance=ExtResource("2_tlur0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.38049, 8.26318)
 
 [node name="Block" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
 [node name="Laser" parent="." instance=ExtResource("3_3n18x")]
 
 [node name="GOAL6" parent="." instance=ExtResource("3_te0xg")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 11.8561, -4.4394, 0.862439)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9.64566, -2.64247, 4.73898)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6h4cd")
