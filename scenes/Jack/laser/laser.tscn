@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scenes/Jack/laser/laser.gd" id="1_mk1th"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0gbj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rspj7"]
 albedo_color = Color(1, 0.00784314, 0.00392157, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_l6tl3"]
-material = SubResource("StandardMaterial3D_w0gbj")
+material = SubResource("StandardMaterial3D_rspj7")
 radius = 0.1
 height = 0.1
 is_hemisphere = true

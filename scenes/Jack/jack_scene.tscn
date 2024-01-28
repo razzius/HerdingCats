@@ -1,21 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://chscphnj7fanb"]
+[gd_scene load_steps=9 format=3 uid="uid://chscphnj7fanb"]
 
 [ext_resource type="PackedScene" uid="uid://bx1lbpph0sg37" path="res://scenes/Jack/block.tscn" id="1_xkxul"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_e5qcy"]
 
 [sub_resource type="GDScript" id="GDScript_f72q1"]
 script/source = "extends Node3D
+@onready var character = $Character
+@onready var laserCircle = $Laser
 
-@export var character
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	character = get_node(\"Character\")
-	print(character.get_child_count())
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	setPosition()
+
+
+func setPosition():
+	print(\"hello\")
+	
+
+
+	
+	
+	
 "
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
@@ -23,6 +32,38 @@ size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1hpg2"]
 size = Vector3(10, 0.5, 10)
+
+[sub_resource type="GDScript" id="GDScript_f5t5s"]
+script/source = "extends Node3D
+@onready var character = get_node(\"Character\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _input(event):
+	if event.is_action_pressed(\"ui_click\"):
+		setPosition()
+
+
+func setPosition():
+	print(\"hello\")
+	
+
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kusg8"]
+albedo_color = Color(1, 0.00784314, 0.00392157, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_57j7g"]
+material = SubResource("StandardMaterial3D_kusg8")
+radius = 0.1
+height = 0.1
+is_hemisphere = true
 
 [node name="JackScene" type="Node3D"]
 script = SubResource("GDScript_f72q1")
@@ -45,3 +86,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176568, 5.71773, -1.74378)
 
 [node name="Character" parent="." instance=ExtResource("2_e5qcy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
+
+[node name="Laser" type="Node3D" parent="."]
+script = SubResource("GDScript_f5t5s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Laser"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67581, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_57j7g")
