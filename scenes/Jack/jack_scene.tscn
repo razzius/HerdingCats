@@ -1,31 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://chscphnj7fanb"]
+[gd_scene load_steps=8 format=3 uid="uid://chscphnj7fanb"]
 
 [ext_resource type="PackedScene" uid="uid://bx1lbpph0sg37" path="res://scenes/Jack/block.tscn" id="1_xkxul"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_e5qcy"]
-
-[sub_resource type="GDScript" id="GDScript_f72q1"]
-script/source = "extends Node3D
-@onready var character = $Character
-@onready var laserCircle = $Laser
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	setPosition()
-
-
-func setPosition():
-	print(\"hello\")
-	
-
-
-	
-	
-	
-"
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
 size = Vector3(10, 0.5, 10)
@@ -66,7 +42,6 @@ height = 0.1
 is_hemisphere = true
 
 [node name="JackScene" type="Node3D"]
-script = SubResource("GDScript_f72q1")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277382, 0)
