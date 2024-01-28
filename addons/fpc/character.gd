@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 # TODO: Add descriptions for each value
+const RAY_LENGTH = 1000
+@export var laserPosition: Vector3
 
 @export_category("Character")
 @export var base_speed : float = 3.0
@@ -272,3 +274,25 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		HEAD.rotation_degrees.y -= event.relative.x * mouse_sensitivity
 		HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity
+
+func _input(event):
+	if event.is_action_pressed("ui_click"):
+		castLaser()
+
+
+func castLaser():
+	var space_state = get_world_3d().direct_space_state
+	var cam = $Head/Camera
+	
+	var mousepos = get_viewport().get_mouse_position()
+
+	var origin = cam.project_ray_origin(mousepos)
+	var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collide_with_areas = true
+
+	var result = space_state.intersect_ray(query)
+	if result:
+		print("Hit at point", result.position)
+		#$Laser.position = result.position
+		laserPosition = result.position

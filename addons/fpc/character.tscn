@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/fpc/character.gd" id="1_0t4e8"]
 [ext_resource type="PackedScene" uid="uid://3mij3cjhkwsm" path="res://addons/fpc/reticles/reticle_1.tscn" id="2_uuexm"]
 [ext_resource type="Script" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
-[ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Jack/laser/laser.tscn" id="4_am4hi"]
+[ext_resource type="Script" path="res://scenes/Jack/laser/laser.gd" id="4_g7nso"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -283,6 +283,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 0, 0)
+current = true
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
@@ -331,6 +332,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_k4wwl")
 target_position = Vector3(0, 0.5, 0)
 
-[node name="Laser" parent="." instance=ExtResource("4_am4hi")]
+[node name="Laser" type="Node3D" parent="."]
+script = ExtResource("4_g7nso")
 
 [editable path="UserInterface/Reticle_1"]
