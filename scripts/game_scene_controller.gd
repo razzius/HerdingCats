@@ -13,8 +13,8 @@ func createCat():
 		getRandomNumberForPosition()
 	)
 	var cat = catScene.instantiate()
-	(cat as Node3D).global_position = randomPosition
 	add_child(cat)
+	(cat as Node3D).global_position = randomPosition
 
 func getRandomNumberForPosition():
 	return (.5 - randf()) * 10
