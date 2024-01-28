@@ -46,7 +46,7 @@ func _process(delta):
 		target = character
 
 	var velo = get_linear_velocity().length()
-	print("{} w velocity {}".format([CurrentState.keys()[current_state], velo], "{}"))
+	#print("{} w velocity {}".format([CurrentState.keys()[current_state], velo], "{}"))
 	if current_state == CurrentState.PLAY:
 		play()
 	elif current_state == CurrentState.STAY:
@@ -56,7 +56,7 @@ func _process(delta):
 
 func play():
 	var directionToTarget = target.global_position - global_position
-	print("directionToTarget: " + str(directionToTarget))
+	#print("directionToTarget: " + str(directionToTarget))
 	var speed = rng.randf_range(-5, 10.0)
 	var direction = directionToTarget.normalized() + Vector3.UP
 	apply_impulse(direction * speed)

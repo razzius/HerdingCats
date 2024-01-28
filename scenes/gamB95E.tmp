@@ -50,5 +50,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23799, -1.12565, -0.262454
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.9959, -6.67485, -3.47909)
 shape = SubResource("BoxShape3D_3ohlx")
 
-[connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
-[connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]
+[connection signal="area_entered" from="Node3D/Area3D" to="." method="entered_goal"]
+[connection signal="area_exited" from="Node3D/Area3D" to="." method="exited_goal"]
