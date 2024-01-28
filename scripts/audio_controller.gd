@@ -20,10 +20,3 @@ func _on_meow_finished(player):
 	player.finished.disconnect(_on_meow_finished)
 	meowPlayerPool.push_back(player)
 
-func _music_play():
-	$music.play()
-	pass
-	
-func _music_stop():
-	$music.stop()
-	pass

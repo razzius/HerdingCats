@@ -2,9 +2,6 @@ extends Node
 
 var current_scene = null
 
-func _init():
-	print("Running game_manager._init.")
-
 func _ready():
 	var root = get_tree().root
 	current_scene = get_tree().get_root().get_child(root.get_child_count() - 1)
