@@ -31,9 +31,12 @@ enum FoodPreference {
 	HUMAN_FOOD
 }
 
-func _ready():
-	target = get_parent().get_node("Block")
+var rng = RandomNumberGenerator.new()
 
+func _ready():
+	# target = get_parent().get_node("Block")
+	target = get_parent().get_node("Character")
+	
 func _process(delta):
 	var velo = get_linear_velocity().length()
 	print("{} w velocity {}".format([CurrentState.keys()[current_state], velo], "{}"))
@@ -47,19 +50,21 @@ func _process(delta):
 func play():
 	var directionToTarget = target.global_position - global_position
 	print("directionToTarget: " + str(directionToTarget))
-	apply_impulse(directionToTarget.normalized() * 5)
+	var speed = rng.randf_range(-5, 10.0)
+	var direction = directionToTarget.normalized() + Vector3.UP
+	apply_impulse(direction * speed)
 	current_state = CurrentState.STAY
 
 func stay():
 	"""Makes the cat stand up."""
-	var stopped = get_linear_velocity().length() < .001
+	var stopped = get_linear_velocity().length() < .01
 
 	if stopped:
 		current_state = CurrentState.GETTING_UP
+		global_rotation = Vector3(0, 0, 0)
 
 func get_up():
-	global_rotation = Vector3(0, 0, 0)
-	var stopped = get_linear_velocity().length() < .001
+	var stopped = get_linear_velocity().length() < .01
 
 	if stopped:
 		current_state = CurrentState.PLAY
