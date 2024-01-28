@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfxoa3yxx11gv"]
 
+[ext_resource type="Script" path="res://scripts/game_scene_controller.gd" id="1_bbcit"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
-[ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
-[ext_resource type="PackedScene" uid="uid://b5403u4jjoyqd" path="res://scenes/cat.tscn" id="3_e0cnn"]
+[ext_resource type="PackedScene" uid="uid://bp67bqc76qr62" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
 size = Vector3(10, 0.5, 10)
@@ -11,6 +11,7 @@ size = Vector3(10, 0.5, 10)
 size = Vector3(10, 0.5, 10)
 
 [node name="GameScene" type="Node3D"]
+script = ExtResource("1_bbcit")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -29.4394, 0)
@@ -27,10 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 0.750273, 0.661129, 0, -0.661129, 0.750273, 
 
 [node name="Character" parent="." instance=ExtResource("2_tlur0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
-
-[node name="Cat" parent="." instance=ExtResource("3_e0cnn")]
-transform = Transform3D(0.0619892, 0, 0.998077, 0, 1, 0, -0.998077, 0, 0.0619892, 0, 0, -4.85735)
-current_state = 7
 
 [node name="Block" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
