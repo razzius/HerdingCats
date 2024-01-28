@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfxoa3yxx11gv"]
+[gd_scene load_steps=7 format=3 uid="uid://dfxoa3yxx11gv"]
 
 [ext_resource type="Script" path="res://scripts/game_scene_controller.gd" id="1_bbcit"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_tlur0"]
-[ext_resource type="PackedScene" uid="uid://bp67bqc76qr62" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
-[ext_resource type="PackedScene" uid="uid://b5403u4jjoyqd" path="res://scenes/cat.tscn" id="3_e0cnn"]
+[ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Jack/laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://ba4wvmj0kqpmk" path="res://assets/GOAL6.glb" id="3_te0xg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_72scy"]
@@ -26,7 +25,7 @@ mesh = SubResource("BoxMesh_72scy")
 shape = SubResource("BoxShape3D_1hpg2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.0203076, -0.489251, 0.871906, 0.0257931, 0.872052, 0.488733, -0.999461, 0.0125642, 0.0303286, 2.42978, 6.61043, -4.9478)
+transform = Transform3D(0.321927, 0.455605, -0.829932, 0.0257931, 0.872052, 0.488732, 0.946413, -0.178743, 0.268986, -20.0859, 12.1836, 1)
 
 [node name="Character" parent="." instance=ExtResource("2_tlur0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
@@ -35,5 +34,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188538, 0.133477)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69929, 0)
 
 [node name="Laser" parent="." instance=ExtResource("3_3n18x")]
+
 [node name="GOAL6" parent="." instance=ExtResource("3_te0xg")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 11.8561, -4.4394, 0.862439)
