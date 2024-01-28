@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bo54k33bxv64d" path="res://scenes/Laser/laser.tscn" id="3_3n18x"]
 [ext_resource type="PackedScene" uid="uid://ba4wvmj0kqpmk" path="res://assets/GOAL6.glb" id="3_te0xg"]
 [ext_resource type="Shader" path="res://Shaders/SkyShader.gdshader" id="5_jsnmq"]
-[ext_resource type="PackedScene" path="res://scenes/ui-overlay.tscn" id="6_ch8gb"]
+[ext_resource type="PackedScene" uid="uid://chppa135y0sgm" path="res://scenes/ui-overlay.tscn" id="6_ch8gb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6d6w"]
 albedo_color = Color(0.196078, 0.47451, 0.184314, 1)
@@ -62,7 +62,7 @@ ambient_light_color = Color(0.356863, 0.521569, 0.952941, 1)
 script = ExtResource("1_bbcit")
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -29.4394, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -3.28601, -28.7847, -0.333828)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -88,11 +88,11 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9.60822, -2.70316, 1.49816)
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0659, 1.15803, -0.212873)
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
+[node name="CollisionArea3D" type="Area3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23799, -1.12565, -0.262454)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.9959, -6.67485, -3.47909)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CollisionArea3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.38012, -6.02055, -3.07846)
 shape = SubResource("BoxShape3D_3ohlx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -100,5 +100,5 @@ environment = SubResource("Environment_6h4cd")
 
 [node name="Ui-overlay" parent="." instance=ExtResource("6_ch8gb")]
 
-[connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
-[connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]
+[connection signal="body_entered" from="Node3D/CollisionArea3D" to="." method="entered_goal"]
+[connection signal="body_exited" from="Node3D/CollisionArea3D" to="." method="exited_goal"]

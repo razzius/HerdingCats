@@ -2,7 +2,8 @@ extends Node3D
 
 var catScene = preload("res://scenes/Cat/cat.tscn")
 var herdCount = 0
-var catCount = 20
+var catCount = 50
+var mutex = Mutex.new()
 
 func _ready():
 	for i in range(catCount):
@@ -21,12 +22,30 @@ func createCat():
 func getRandomNumberForPosition():
 	return (.5 - randf()) * 10
 
-func entered_goal(obj):
-	if(obj.name.begins_with("@RigidBody3D@")):
-		herdCount += 1
-		$"Ui-overlay/BoxContainer/HerdContainer/CatsHerdedCount".text = str(herdCount) + "/" + str(catCount)
+func _process(delta):
+	var bodies = $Node3D/CollisionArea3D.get_overlapping_bodies()
+	var count = 0
+	var targets = []
+	for b in bodies:
+		if(b.name.begins_with("@RigidBody3D@") || b.name.begins_with("Cat")):
+			count+=1
+			targets.append(b)
+	$"Ui-overlay/BoxContainer/HerdContainer/CatsHerdedCount".text = str(count) + "/" + str(catCount)	
+
+
+#func entered_goal(obj):
+	#if(obj.name.begins_with("@RigidBody3D@")):
+		#mutex.lock()
+		#herdCount += 1
+		#print("entered - herd count: " + str(herdCount) + obj.name)
+		#$"Ui-overlay/BoxContainer/HerdContainer/CatsHerdedCount".text = str(herdCount) + "/" + str(catCount)
+		#mutex.unlock()
 		
 
-func exited_goal(obj):
-	if(obj.name.begins_with("@RigidBody3D@")):
-		herdCount -= herdCount - 1
+#func exited_goal(obj):
+	#if(obj.name.begins_with("@RigidBody3D@")):
+		#mutex.lock()
+		#herdCount -= 1
+		#print("entered - herd count: " + str(herdCount) + obj.name)
+		#$"Ui-overlay/BoxContainer/HerdContainer/CatsHerdedCount".text = str(herdCount) + "/" + str(catCount)
+		#mutex.unlock()

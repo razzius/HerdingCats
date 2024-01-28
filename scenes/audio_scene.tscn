@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6wv1ofmh5utl"]
+
+[ext_resource type="Script" path="res://scripts/audio_controller.gd" id="1_xpx7t"]
+[ext_resource type="AudioStream" uid="uid://dwck6pqa7lb7r" path="res://audio/sfx/meow3.mp3" id="2_bew0c"]
+[ext_resource type="AudioStream" uid="uid://b7iudevm1pi0d" path="res://audio/music/road-to-paris-gypsy-jazz-144631.mp3" id="3_jojfr"]
+
+[node name="Audio-test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 291.0
+offset_top = -228.0
+offset_right = 291.0
+offset_bottom = -228.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xpx7t")
+
+[node name="MeowButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -193.0
+offset_top = 414.0
+offset_right = 82.0
+offset_bottom = 534.0
+text = "MEOW"
+
+[node name="meow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bew0c")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jojfr")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 407.0
+offset_right = 341.0
+offset_bottom = 530.0
+text = "music play"
+
+[node name="StopButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 418.0
+offset_right = 563.0
+offset_bottom = 525.0
+text = "music stop"
+
+[connection signal="pressed" from="MeowButton" to="." method="_meow"]
+[connection signal="pressed" from="PlayButton" to="." method="_music_play"]
+[connection signal="pressed" from="StopButton" to="." method="_music_stop"]
