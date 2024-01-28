@@ -2,7 +2,8 @@ extends Node3D
 
 var catScene = preload("res://scenes/Cat/cat.tscn")
 var herdCount = 0
-var catCount = 50
+var count = 0
+var catCount = 2
 var mutex = Mutex.new()
 
 func _ready():
@@ -22,18 +23,22 @@ func createCat():
 func getRandomNumberForPosition():
 	return (.5 - randf()) * 10
 
-func _process(delta):
+func _physics_process(delta):
 	var bodies = $Node3D/CollisionArea3D.get_overlapping_bodies()
-	var count = 0
+
 	var targets = []
 	for b in bodies:
 		if(b.name.begins_with("@RigidBody3D@") || b.name.begins_with("Cat")):
 			count+=1
 			targets.append(b)
 	$"Ui-overlay/BoxContainer/HerdContainer/CatsHerdedCount".text = str(count) + "/" + str(catCount)	
+	
+	if(count == catCount):
+		AudioController._victory()
+		
+		
 
-
-#func entered_goal(obj):
+	
 	#if(obj.name.begins_with("@RigidBody3D@")):
 		#mutex.lock()
 		#herdCount += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://blmfkub30ou3w"]
+[gd_scene load_steps=2 format=3 uid="uid://dxaaaopk5sosj"]
 
 [ext_resource type="AudioStream" uid="uid://b7iudevm1pi0d" path="res://audio/music/road-to-paris-gypsy-jazz-144631.mp3" id="1_vo62j"]
 
@@ -6,4 +6,3 @@
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_vo62j")
-autoplay = true
