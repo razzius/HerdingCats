@@ -64,7 +64,7 @@ func play():
 
 	var directionToTarget = target.global_position - global_position
 
-	print("directionToTarget: " + str(directionToTarget))
+	#print("directionToTarget: " + str(directionToTarget))
 	var speed = rng.randf_range(5.0, 10.0)
 	var direction = directionToTarget.normalized() + Vector3.UP / 2
 	apply_impulse(direction * speed)

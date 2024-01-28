@@ -296,7 +296,7 @@ func castLaser():
 
 	var result = space_state.intersect_ray(query)
 	if result:
-		print("Hit at point", result.position)
+		#print("Hit at point", result.position)
 		#$Laser.position = result.position
 		laserPosition = result.position
 		var laser = get_parent().get_node("Laser")
