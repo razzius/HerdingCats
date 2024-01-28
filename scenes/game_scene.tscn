@@ -97,10 +97,5 @@ shape = SubResource("BoxShape3D_3ohlx")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6h4cd")
 
-<<<<<<< HEAD
-[node name="Ui-overlay" parent="." instance=ExtResource("6_4xv5n")]
-
-=======
->>>>>>> b604bc44ff2dd5f28ae825bf060fb1e1961ba989
 [connection signal="body_entered" from="Node3D/Area3D" to="." method="entered_goal"]
 [connection signal="body_exited" from="Node3D/Area3D" to="." method="exited_goal"]
