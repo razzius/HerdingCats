@@ -1,5 +1,6 @@
 extends Node3D
 
+var mainMenuScenePath = "res://scenes/main_menu.tscn"
 var catScene = preload("res://scenes/Cat/cat.tscn")
 var herdCount = 0
 var catCount = 10
@@ -21,6 +22,10 @@ func createCat():
 
 func getRandomNumberForPosition():
 	return (.5 - randf()) * 10
+
+func _process(_delta):
+	if Input.is_action_pressed("ui_cancel"):
+		GameManager._change_scene(mainMenuScenePath)
 
 func _physics_process(delta):
 	var bodies = $Node3D/CollisionArea3D.get_overlapping_bodies()
