@@ -15,42 +15,52 @@ font_size = 37
 script = ExtResource("1_13a2e")
 gameScenePath = "res://scenes/game_scene.tscn"
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 34.0
-offset_top = 259.0
-offset_right = 232.0
-offset_bottom = 474.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
-offset_left = 48.0
-offset_top = 8.0
-offset_right = 613.0
-offset_bottom = 133.0
+[node name="StartButton" type="Button" parent="Control"]
+offset_left = -540.0
+offset_top = -61.0
+offset_right = -342.0
+offset_bottom = 154.0
+
+[node name="Label" type="Label" parent="Control"]
+offset_left = -526.0
+offset_top = -312.0
+offset_right = 39.0
+offset_bottom = -187.0
 text = "Herding Cats"
 label_settings = SubResource("LabelSettings_r0l61")
 
-[node name="MikeCats" type="Sprite2D" parent="."]
-position = Vector2(499, 370)
+[node name="MikeCats" type="Sprite2D" parent="Control"]
+position = Vector2(-75, 50)
 scale = Vector2(0.115079, 0.115079)
 texture = ExtResource("2_wrptu")
 
-[node name="OrangeBoys" type="Sprite2D" parent="."]
-position = Vector2(927, 198)
+[node name="OrangeBoys" type="Sprite2D" parent="Control"]
+position = Vector2(353, -122)
 scale = Vector2(0.0852865, 0.0852865)
 texture = ExtResource("3_8nq23")
 
-[node name="Nyx" type="Sprite2D" parent="."]
-position = Vector2(931, 488)
+[node name="Nyx" type="Sprite2D" parent="Control"]
+position = Vector2(357, 168)
 scale = Vector2(0.0848388, 0.0848389)
 texture = ExtResource("4_tnwlq")
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 78.0
-offset_top = 306.0
-offset_right = 643.0
-offset_bottom = 431.0
+[node name="Label2" type="Label" parent="Control"]
+offset_left = -496.0
+offset_top = -14.0
+offset_right = 69.0
+offset_bottom = 111.0
 text = " Start
 Game"
 label_settings = SubResource("LabelSettings_t101e")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]

@@ -287,7 +287,7 @@ func castLaser():
 	var space_state = get_world_3d().direct_space_state
 	var cam = $Head/Camera
 	
-	var mousepos = get_viewport().get_mouse_position()
+	var mousepos = get_viewport().get_visible_rect().size / 2
 
 	var origin = cam.project_ray_origin(mousepos)
 	var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH

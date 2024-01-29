@@ -10,6 +10,10 @@ func _ready():
 	for i in range(catCount):
 		createCat()
 
+func _input(event):
+	if event is InputEventMouseButton and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func createCat():
 	var randomPosition = Vector3(
 		getRandomNumberForPosition(),
